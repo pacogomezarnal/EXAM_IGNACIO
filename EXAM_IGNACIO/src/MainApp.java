@@ -14,8 +14,10 @@ public class MainApp {
 		cDB= ConexionDB.getInstance("localhost","thelaby","root","tonphp");
 		if(cDB.connectDB()==true){
 			System.out.println("ESTAS CONECTADO CORRECTAMENTE");
+			System.out.println("-------Mi usuario------------------");
 			AppFrame frame = new AppFrame();
 			frame.setVisible(true);
+			System.out.println("-------Conjunto de jugadores----------");
 			mJug = new ModeloJugadores();
 			mJug.getCadete();
 			cad=new Cadete();
