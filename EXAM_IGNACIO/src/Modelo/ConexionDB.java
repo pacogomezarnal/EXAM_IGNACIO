@@ -5,15 +5,16 @@ import java.sql.SQLException;
 
 
 
+
 public class ConexionDB {
 	// DATOS DE LA CONEXION
 	static final String CONTROLADOR_MYSQL= "com.mysql.jdbc.Driver";
 	
 	//DATOS POR DEFECTO
-	private static final String HOST="localhost";
-	private static final String BBDD="thelaby";
-	private static final String USER="root";
-	private static final String PASS="";
+		private static final String HOST="localhost";
+		private static final String BBDD="thelaby";
+		private static final String USER="root";
+		private static final String PASS="";
 	
 	//DATOS DE LA BBDD
 	private String host;
@@ -39,19 +40,11 @@ public class ConexionDB {
 	//Implementar SingleTon
 	public static ConexionDB getInstance(String HOST,String BBDD,String USER,String PASS) {
 	      if(instance == null) {
-	         instance = null;
+	    	  instance=new ConexionDB(HOST,BBDD,USER,PASS);
 	      }
 	      return instance;
 	   }
-	//Este método es el mismo que el anterior pero no es necesario
-	//pasar parámetros de base de datos ya que toma los
-	//valores por defecto
-	public static ConexionDB getInstance() {
-	      if(instance == null) {
-	         instance = null;
-	      }
-	      return instance;
-	  }
+
 	
 	//Metodo que permite la conexion a la base de datos
 	public boolean connectDB(){
@@ -74,10 +67,19 @@ public class ConexionDB {
 		return true;
 	}
 	
+	//Este método es el mismo que el anterior pero no es necesario
+		//pasar parámetros de base de datos ya que toma los
+		//valores por defecto
+		public static ConexionDB getInstance() {
+		      if(instance == null) {
+		         instance = null;
+		      }
+		      return instance;
+		  }
+	
 	//Metodo que devuelve la conexion a la base de datos
 	public static Connection getConexion(){
 		return conexion;
 	}
 
 }
-

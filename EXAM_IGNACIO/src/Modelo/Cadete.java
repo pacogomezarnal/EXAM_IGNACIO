@@ -28,6 +28,13 @@ public class Cadete {
 		this.nacionalidad=nacionalidad;
 		this.equipo=equipo;
 		
+		System.out.print(id+";");
+		System.out.print(nombre+";");
+		System.out.print(apellidos+";");
+		System.out.print(edad+";");
+		System.out.print(nacionalidad+";");
+		System.out.println(equipo+";");
+		
 	}
 
 	public int getId() {
